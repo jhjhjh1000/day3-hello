@@ -96,6 +96,44 @@
 
       .section {
         padding: 4.5rem 0;
+        scroll-margin-top: 84px;
+      }
+
+      .hero-kicker {
+        margin: 0 0 .6rem;
+        color: var(--primary);
+        font-weight: 800;
+      }
+
+      .hero-lead {
+        max-width: 680px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .75rem;
+        margin-top: 1.25rem;
+      }
+
+      .hero-stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: .75rem;
+        margin-top: 1.25rem;
+      }
+
+      .hero-stat-card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: .9rem;
+      }
+
+      .hero-cta-secondary {
+        border-color: var(--line);
+        color: var(--text);
+        background: var(--surface);
       }
 
       .section-title {
@@ -105,6 +143,29 @@
       }
 
       .section-desc {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .strength-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+        margin-top: 1.2rem;
+      }
+
+      .strength-card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 1rem;
+      }
+
+      .strength-title {
+        margin: 0 0 .45rem;
+      }
+
+      .strength-copy {
         margin: 0;
         color: var(--muted);
       }
@@ -128,27 +189,39 @@
           <a href="#location">위치</a>
           <a href="#faq">FAQ</a>
         </nav>
-        <a class="cta cta-primary" href="https://open.kakao.com/o/demo-link" target="_blank" rel="noopener">카카오톡 문의</a>
+        <a
+          class="cta cta-primary"
+          href="https://open.kakao.com/o/demo-link"
+          target="_blank"
+          rel="noopener"
+          aria-label="카카오톡 문의 (새 창 열림)"
+        >카카오톡 문의</a>
       </div>
     </header>
 
     <main>
       <section id="hero" class="section">
         <div class="container">
-          <p style="margin:0 0 .6rem;color:var(--primary);font-weight:800;">초·중·고 맞춤 영어관리</p>
+            <p class="hero-kicker">초·중·고 맞춤 영어관리</p>
           <h1 class="section-title">학부모가 안심하고 맡길 수 있는 영어학원</h1>
-          <p class="section-desc" style="max-width:680px;">
+          <p class="section-desc hero-lead">
             진단부터 피드백까지 한 흐름으로 관리합니다. 내신·수능 성과를 데이터로 점검하고,
             학생별 학습 설계로 흔들림 없이 성장시킵니다.
           </p>
-          <div style="display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.25rem;">
-            <a class="cta cta-primary" href="https://open.kakao.com/o/demo-link" target="_blank" rel="noopener">카카오톡 오픈채팅 문의</a>
-            <a class="cta" style="border-color:var(--line);color:var(--text);background:var(--surface);" href="#results">성적 사례 보기</a>
+          <div class="hero-actions">
+            <a
+              class="cta cta-primary"
+              href="https://open.kakao.com/o/demo-link"
+              target="_blank"
+              rel="noopener"
+              aria-label="카카오톡 오픈채팅 문의 (새 창 열림)"
+            >카카오톡 오픈채팅 문의</a>
+            <a class="cta hero-cta-secondary" href="#results">성적 사례 보기</a>
           </div>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.75rem;margin-top:1.25rem;">
-            <div style="background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:.9rem;"><strong>내신 A등급 비율</strong><br />최근 1년 78%</div>
-            <div style="background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:.9rem;"><strong>학부모 만족도</strong><br />정기 설문 4.8/5</div>
-            <div style="background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:.9rem;"><strong>관리 리포트</strong><br />주 1회 제공</div>
+          <div class="hero-stat-grid">
+            <div class="hero-stat-card"><strong>내신 A등급 비율</strong><br />최근 1년 78%</div>
+            <div class="hero-stat-card"><strong>학부모 만족도</strong><br />정기 설문 4.8/5</div>
+            <div class="hero-stat-card"><strong>관리 리포트</strong><br />주 1회 제공</div>
           </div>
         </div>
       </section>
@@ -157,30 +230,64 @@
         <div class="container">
           <h2 class="section-title">선택 이유가 분명한 3가지 강점</h2>
           <p class="section-desc">성과, 밀착관리, 연계 커리큘럼을 한곳에서 제공합니다.</p>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1.2rem;">
-            <article style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1rem;">
-              <h3 style="margin:0 0 .45rem;">성적 향상 실적</h3>
-              <p style="margin:0;color:var(--muted);">내신·모의고사 지표를 수치로 점검하고 단계별 목표를 관리합니다.</p>
+          <div class="strength-grid">
+            <article class="strength-card">
+              <h3 class="strength-title">성적 향상 실적</h3>
+              <p class="strength-copy">내신·모의고사 지표를 수치로 점검하고 단계별 목표를 관리합니다.</p>
             </article>
-            <article style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1rem;">
-              <h3 style="margin:0 0 .45rem;">소수정예 맞춤관리</h3>
-              <p style="margin:0;color:var(--muted);">개인별 학습 성향과 약점에 맞춘 과제·피드백으로 학습 효율을 높입니다.</p>
+            <article class="strength-card">
+              <h3 class="strength-title">소수정예 맞춤관리</h3>
+              <p class="strength-copy">개인별 학습 성향과 약점에 맞춘 과제·피드백으로 학습 효율을 높입니다.</p>
             </article>
-            <article style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1rem;">
-              <h3 style="margin:0 0 .45rem;">초중고 연계 커리큘럼</h3>
-              <p style="margin:0;color:var(--muted);">학년 전환 시기에도 끊김 없는 학습 로드맵으로 안정적으로 실력을 확장합니다.</p>
+            <article class="strength-card">
+              <h3 class="strength-title">초중고 연계 커리큘럼</h3>
+              <p class="strength-copy">학년 전환 시기에도 끊김 없는 학습 로드맵으로 안정적으로 실력을 확장합니다.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="results" class="section"><div class="container"><h2 class="section-title">성적 향상 사례</h2></div></section>
-      <section id="reviews" class="section"><div class="container"><h2 class="section-title">학부모 후기</h2></div></section>
-      <section id="system" class="section"><div class="container"><h2 class="section-title">수업/관리 방식</h2></div></section>
-      <section id="programs" class="section"><div class="container"><h2 class="section-title">프로그램 안내</h2></div></section>
-      <section id="location" class="section"><div class="container"><h2 class="section-title">위치/오시는 길</h2></div></section>
-      <section id="faq" class="section"><div class="container"><h2 class="section-title">FAQ</h2></div></section>
-      <section id="cta-final" class="section"><div class="container"><h2 class="section-title">문의하기</h2></div></section>
+      <section id="results" class="section">
+        <div class="container">
+          <h2 class="section-title">성적 향상 사례</h2>
+        </div>
+      </section>
+
+      <section id="reviews" class="section">
+        <div class="container">
+          <h2 class="section-title">학부모 후기</h2>
+        </div>
+      </section>
+
+      <section id="system" class="section">
+        <div class="container">
+          <h2 class="section-title">수업/관리 방식</h2>
+        </div>
+      </section>
+
+      <section id="programs" class="section">
+        <div class="container">
+          <h2 class="section-title">프로그램 안내</h2>
+        </div>
+      </section>
+
+      <section id="location" class="section">
+        <div class="container">
+          <h2 class="section-title">위치/오시는 길</h2>
+        </div>
+      </section>
+
+      <section id="faq" class="section">
+        <div class="container">
+          <h2 class="section-title">FAQ</h2>
+        </div>
+      </section>
+
+      <section id="cta-final" class="section">
+        <div class="container">
+          <h2 class="section-title">문의하기</h2>
+        </div>
+      </section>
     </main>
   </body>
 </html>
