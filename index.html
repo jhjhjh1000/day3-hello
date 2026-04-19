@@ -1,1 +1,145 @@
-hello world 1
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프라임 영어학원 | 초중고 맞춤 영어관리</title>
+    <style>
+      :root {
+        --bg: #f7f8fc;
+        --surface: #ffffff;
+        --text: #131722;
+        --muted: #5e667a;
+        --primary: #1f3cff;
+        --primary-strong: #1128c9;
+        --line: #e4e7f0;
+        --success: #0e9f6e;
+        --max: 1080px;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: "Pretendard", "Noto Sans KR", system-ui, -apple-system, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      .container {
+        width: min(100% - 2rem, var(--max));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.92);
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(8px);
+      }
+
+      .site-header-inner {
+        min-height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .brand {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 800;
+      }
+
+      .nav {
+        display: none;
+        gap: 0.75rem;
+      }
+
+      .nav a {
+        text-decoration: none;
+        color: var(--muted);
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        padding: 0.75rem 1.1rem;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.95rem;
+        border: 1px solid transparent;
+      }
+
+      .cta-primary {
+        background: var(--primary);
+        color: #fff;
+      }
+
+      .cta-primary:hover { background: var(--primary-strong); }
+
+      .section {
+        padding: 4.5rem 0;
+      }
+
+      .section-title {
+        margin: 0 0 0.5rem;
+        font-size: clamp(1.45rem, 2.2vw, 2rem);
+        line-height: 1.3;
+      }
+
+      .section-desc {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      @media (min-width: 920px) {
+        .nav { display: flex; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header-inner">
+        <p class="brand">프라임 영어학원</p>
+        <nav class="nav" aria-label="페이지 섹션">
+          <a href="#hero">홈</a>
+          <a href="#strengths">강점</a>
+          <a href="#results">성적 사례</a>
+          <a href="#reviews">학부모 후기</a>
+          <a href="#system">관리 방식</a>
+          <a href="#programs">프로그램</a>
+          <a href="#location">위치</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <a class="cta cta-primary" href="#cta-final">카카오톡 문의</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="section">
+        <div class="container">
+          <h1 class="section-title">학부모가 안심하고 맡길 수 있는 영어관리</h1>
+          <p class="section-desc">섹션 콘텐츠를 다음 작업에서 채웁니다.</p>
+        </div>
+      </section>
+
+      <section id="strengths" class="section"><div class="container"><h2 class="section-title">학원 강점</h2></div></section>
+      <section id="results" class="section"><div class="container"><h2 class="section-title">성적 향상 사례</h2></div></section>
+      <section id="reviews" class="section"><div class="container"><h2 class="section-title">학부모 후기</h2></div></section>
+      <section id="system" class="section"><div class="container"><h2 class="section-title">수업/관리 방식</h2></div></section>
+      <section id="programs" class="section"><div class="container"><h2 class="section-title">프로그램 안내</h2></div></section>
+      <section id="location" class="section"><div class="container"><h2 class="section-title">위치/오시는 길</h2></div></section>
+      <section id="faq" class="section"><div class="container"><h2 class="section-title">FAQ</h2></div></section>
+      <section id="cta-final" class="section"><div class="container"><h2 class="section-title">문의하기</h2></div></section>
+    </main>
+  </body>
+</html>
