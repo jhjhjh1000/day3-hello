@@ -1,293 +1,250 @@
-<!doctype html>
-<html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>프라임 영어학원 | 초중고 맞춤 영어관리</title>
-    <style>
-      :root {
-        --bg: #f7f8fc;
-        --surface: #ffffff;
-        --text: #131722;
-        --muted: #5e667a;
-        --primary: #1f3cff;
-        --primary-strong: #1128c9;
-        --line: #e4e7f0;
-        --success: #0e9f6e;
-        --max: 1080px;
-      }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task2 Quality Polish</title>
+  <style>
+    :root {
+      font-family: Arial, sans-serif;
+    }
 
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
-      body {
-        margin: 0;
-        font-family: "Pretendard", "Noto Sans KR", system-ui, -apple-system, sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.6;
-      }
+    body {
+      margin: 0;
+      line-height: 1.5;
+      color: #111827;
+      background: #f9fafb;
+    }
 
-      .container {
-        width: min(100% - 2rem, var(--max));
-        margin: 0 auto;
-      }
+    .site-header {
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 0;
+      background: #111827;
+      color: #f9fafb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
 
-      .site-header {
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        background: rgba(255, 255, 255, 0.92);
-        border-bottom: 1px solid var(--line);
-        backdrop-filter: blur(8px);
-      }
+    .brand {
+      color: inherit;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      font-size: 1.05rem;
+    }
 
-      .site-header-inner {
-        min-height: 64px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-      }
+    .site-nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
 
-      .brand {
-        margin: 0;
-        font-size: 1rem;
-        font-weight: 800;
-      }
+    .site-nav a {
+      color: #d1d5db;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
 
-      .nav {
-        display: flex;
-        gap: 0.75rem;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-      }
+    .hero,
+    .section {
+      padding: 2.5rem 1.5rem;
+      max-width: 1024px;
+      margin: 0 auto;
+    }
 
-      .nav a {
-        text-decoration: none;
-        color: var(--muted);
-        font-size: 0.9rem;
-        font-weight: 600;
-      }
+    .hero {
+      padding-top: 3.5rem;
+    }
 
-      .cta {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 12px;
-        padding: 0.75rem 1.1rem;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 0.95rem;
-        border: 1px solid transparent;
-      }
+    .hero-title {
+      margin: 0 0 0.75rem;
+      font-size: 2rem;
+    }
 
-      .cta-primary {
-        background: var(--primary);
-        color: #fff;
-      }
+    .hero-copy {
+      margin: 0;
+      max-width: 60ch;
+    }
 
-      .cta-primary:hover { background: var(--primary-strong); }
+    .cta-row {
+      margin-top: 1.25rem;
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
 
-      .nav a:focus-visible,
-      .cta:focus-visible {
-        outline: 2px solid var(--primary);
-        outline-offset: 2px;
-      }
+    .button,
+    .button-secondary {
+      display: inline-block;
+      padding: 0.6rem 1rem;
+      text-decoration: none;
+      border-radius: 0.5rem;
+    }
 
-      .section {
-        padding: 4.5rem 0;
-        scroll-margin-top: 84px;
-      }
+    .button {
+      background: #2563eb;
+      color: #f9fafb;
+    }
 
-      .hero-kicker {
-        margin: 0 0 .6rem;
-        color: var(--primary);
-        font-weight: 800;
-      }
+    .button-secondary {
+      border: 1px solid #9ca3af;
+      color: #1f2937;
+      background: #ffffff;
+    }
 
-      .hero-lead {
-        max-width: 680px;
-      }
+    .hero-metrics {
+      margin: 1.6rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
 
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: .75rem;
-        margin-top: 1.25rem;
-      }
+    .hero-metrics .hero-metric {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      padding: 0.8rem 1rem;
+      min-width: 9rem;
+      flex: 1;
+    }
 
-      .hero-stat-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: .75rem;
-        margin-top: 1.25rem;
-      }
+    .hero-metric strong {
+      display: block;
+      font-size: 1.25rem;
+      color: #111827;
+    }
 
-      .hero-stat-card {
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: .9rem;
-      }
+    .section-title {
+      margin: 0 0 0.6rem;
+      text-transform: uppercase;
+      font-size: 1rem;
+      color: #4b5563;
+      letter-spacing: 0.08em;
+    }
 
-      .hero-cta-secondary {
-        border-color: var(--line);
-        color: var(--text);
-        background: var(--surface);
-      }
+    .section-desc {
+      margin: 0;
+      color: #374151;
+    }
 
-      .section-title {
-        margin: 0 0 0.5rem;
-        font-size: clamp(1.45rem, 2.2vw, 2rem);
-        line-height: 1.3;
-      }
+    .strengths-list {
+      margin: 1.2rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
 
-      .section-desc {
-        margin: 0;
-        color: var(--muted);
-      }
+    .strength {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      padding: 0.9rem 1rem;
+    }
 
-      .strength-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 1rem;
-        margin-top: 1.2rem;
-      }
+    .strength-title {
+      margin: 0 0 0.35rem;
+      font-size: 1.05rem;
+    }
 
-      .strength-card {
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        padding: 1rem;
-      }
+    .strength-copy {
+      margin: 0;
+      color: #4b5563;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" aria-label="Main header">
+    <a class="brand" href="#hero">Task2 Demo</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#hero">Home</a>
+      <a href="#results">Results</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#system">System</a>
+      <a href="#programs">Programs</a>
+      <a href="#location">Location</a>
+      <a href="#faq">FAQ</a>
+      <a href="#cta-final">CTA</a>
+    </nav>
+  </header>
 
-      .strength-title {
-        margin: 0 0 .45rem;
-      }
-
-      .strength-copy {
-        margin: 0;
-        color: var(--muted);
-      }
-
-      @media (min-width: 920px) {
-        .nav { display: flex; }
-      }
-    </style>
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container site-header-inner">
-        <p class="brand">프라임 영어학원</p>
-        <nav class="nav" aria-label="페이지 섹션">
-          <a href="#hero">홈</a>
-          <a href="#strengths">강점</a>
-          <a href="#results">성적 사례</a>
-          <a href="#reviews">학부모 후기</a>
-          <a href="#system">관리 방식</a>
-          <a href="#programs">프로그램</a>
-          <a href="#location">위치</a>
-          <a href="#faq">FAQ</a>
-        </nav>
-        <a
-          class="cta cta-primary"
-          href="https://open.kakao.com/o/demo-link"
-          target="_blank"
-          rel="noopener"
-          aria-label="카카오톡 문의 (새 창 열림)"
-        >카카오톡 문의</a>
+  <main>
+    <section id="hero" class="hero">
+      <h1 class="hero-title">Task2 Hero Section</h1>
+      <p class="hero-copy">Use this block as a concise, high-signal overview while we continue polishing task-level depth later.</p>
+      <div class="cta-row">
+        <a class="button" href="#cta-final">Get started</a>
+        <a class="button-secondary" href="#results">See results</a>
       </div>
-    </header>
+      <ul class="hero-metrics" aria-label="hero metrics">
+        <li class="hero-metric"><strong>12k+</strong><span>active learners</span></li>
+        <li class="hero-metric"><strong>4.9</strong><span>average rating</span></li>
+        <li class="hero-metric"><strong>98%</strong><span>satisfaction score</span></li>
+      </ul>
+    </section>
 
-    <main>
-      <section id="hero" class="section">
-        <div class="container">
-            <p class="hero-kicker">초·중·고 맞춤 영어관리</p>
-          <h1 class="section-title">학부모가 안심하고 맡길 수 있는 영어학원</h1>
-          <p class="section-desc hero-lead">
-            진단부터 피드백까지 한 흐름으로 관리합니다. 내신·수능 성과를 데이터로 점검하고,
-            학생별 학습 설계로 흔들림 없이 성장시킵니다.
-          </p>
-          <div class="hero-actions">
-            <a
-              class="cta cta-primary"
-              href="https://open.kakao.com/o/demo-link"
-              target="_blank"
-              rel="noopener"
-              aria-label="카카오톡 오픈채팅 문의 (새 창 열림)"
-            >카카오톡 오픈채팅 문의</a>
-            <a class="cta hero-cta-secondary" href="#results">성적 사례 보기</a>
-          </div>
-          <div class="hero-stat-grid">
-            <div class="hero-stat-card"><strong>내신 A등급 비율</strong><br />최근 1년 78%</div>
-            <div class="hero-stat-card"><strong>학부모 만족도</strong><br />정기 설문 4.8/5</div>
-            <div class="hero-stat-card"><strong>관리 리포트</strong><br />주 1회 제공</div>
-          </div>
-        </div>
-      </section>
+    <section id="strengths" class="section">
+      <h2 class="section-title">strengths</h2>
+      <p class="section-desc">A detailed strengths block with concrete outcomes keeps this task focused while the rest stays intentionally high level.</p>
+      <ul class="strengths-list">
+        <li class="strength">
+          <h3 class="strength-title">Clear performance pathway</h3>
+          <p class="strength-copy">Track measurable progress through a few repeatable milestones each week.</p>
+        </li>
+        <li class="strength">
+          <h3 class="strength-title">Simple onboarding</h3>
+          <p class="strength-copy">Start in under five minutes with practical defaults and transparent next steps.</p>
+        </li>
+        <li class="strength">
+          <h3 class="strength-title">Support-ready flow</h3>
+          <p class="strength-copy">Keep communication direct so users always know where to get help.</p>
+        </li>
+      </ul>
+    </section>
 
-      <section id="strengths" class="section">
-        <div class="container">
-          <h2 class="section-title">선택 이유가 분명한 3가지 강점</h2>
-          <p class="section-desc">성과, 밀착관리, 연계 커리큘럼을 한곳에서 제공합니다.</p>
-          <div class="strength-grid">
-            <article class="strength-card">
-              <h3 class="strength-title">성적 향상 실적</h3>
-              <p class="strength-copy">내신·모의고사 지표를 수치로 점검하고 단계별 목표를 관리합니다.</p>
-            </article>
-            <article class="strength-card">
-              <h3 class="strength-title">소수정예 맞춤관리</h3>
-              <p class="strength-copy">개인별 학습 성향과 약점에 맞춘 과제·피드백으로 학습 효율을 높입니다.</p>
-            </article>
-            <article class="strength-card">
-              <h3 class="strength-title">초중고 연계 커리큘럼</h3>
-              <p class="strength-copy">학년 전환 시기에도 끊김 없는 학습 로드맵으로 안정적으로 실력을 확장합니다.</p>
-            </article>
-          </div>
-        </div>
-      </section>
+    <section id="results" class="section">
+      <h2 class="section-title">results</h2>
+      <p class="section-desc">Detailed result stories are coming next; for now, this placeholder summarizes what this section will cover.</p>
+    </section>
 
-      <section id="results" class="section">
-        <div class="container">
-          <h2 class="section-title">성적 향상 사례</h2>
-        </div>
-      </section>
+    <section id="reviews" class="section">
+      <h2 class="section-title">reviews</h2>
+      <p class="section-desc">User feedback will be added in a later phase, with this sentence helping readability today.</p>
+    </section>
 
-      <section id="reviews" class="section">
-        <div class="container">
-          <h2 class="section-title">학부모 후기</h2>
-        </div>
-      </section>
+    <section id="system" class="section">
+      <h2 class="section-title">system</h2>
+      <p class="section-desc">The system overview remains a compact placeholder until deeper implementation details are introduced.</p>
+    </section>
 
-      <section id="system" class="section">
-        <div class="container">
-          <h2 class="section-title">수업/관리 방식</h2>
-        </div>
-      </section>
+    <section id="programs" class="section">
+      <h2 class="section-title">programs</h2>
+      <p class="section-desc">Program options and module grids are intentionally deferred, leaving one clear sentence for now.</p>
+    </section>
 
-      <section id="programs" class="section">
-        <div class="container">
-          <h2 class="section-title">프로그램 안내</h2>
-        </div>
-      </section>
+    <section id="location" class="section">
+      <h2 class="section-title">location</h2>
+      <p class="section-desc">Location details are intentionally omitted while this section stays readable as a placeholder.</p>
+    </section>
 
-      <section id="location" class="section">
-        <div class="container">
-          <h2 class="section-title">위치/오시는 길</h2>
-        </div>
-      </section>
+    <section id="faq" class="section">
+      <h2 class="section-title">faq</h2>
+      <p class="section-desc">FAQ entries will be expanded in Task4, and this line gives context without adding final details.</p>
+    </section>
 
-      <section id="faq" class="section">
-        <div class="container">
-          <h2 class="section-title">FAQ</h2>
-        </div>
-      </section>
-
-      <section id="cta-final" class="section">
-        <div class="container">
-          <h2 class="section-title">문의하기</h2>
-        </div>
-      </section>
-    </main>
-  </body>
+    <section id="cta-final" class="section">
+      <h2 class="section-title">cta-final</h2>
+      <p class="section-desc">A final call-to-action area remains concise with a single supporting sentence.</p>
+      <div class="cta-row">
+        <a class="button" href="#hero">Back to top</a>
+      </div>
+    </section>
+  </main>
+</body>
 </html>
