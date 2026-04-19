@@ -204,6 +204,82 @@
         margin-top: 1.25rem;
       }
 
+      .programs-grid,
+      .contact-list,
+      .faq-list {
+        margin-top: 1.25rem;
+      }
+
+      .programs-grid,
+      .contact-list,
+      .faq-list {
+        display: grid;
+        gap: 0.85rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .contact-card {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 1rem;
+        background: var(--surface);
+      }
+
+      .contact-label {
+        display: block;
+        color: var(--primary);
+        font-weight: 700;
+        margin-bottom: 0.24rem;
+      }
+
+      .contact-value {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .faq-item {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--surface);
+        padding: 0.95rem 1rem;
+      }
+
+      .faq-item summary {
+        cursor: pointer;
+        font-weight: 700;
+        list-style: none;
+      }
+
+      .faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .faq-item summary::after {
+        content: "+";
+        float: right;
+        font-size: 1.15rem;
+        transform: translateY(-1px);
+        color: var(--primary);
+      }
+
+      .faq-item[open] summary::after {
+        content: "−";
+      }
+
+      .faq-answer {
+        margin: 0.75rem 0 0;
+        color: var(--muted);
+      }
+
+      .floating-kakao {
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem;
+        z-index: 40;
+        border-radius: 999px;
+        box-shadow: 0 8px 20px rgba(30, 64, 255, 0.25);
+      }
+
       .card {
         background: var(--surface);
         border: 1px solid var(--line);
@@ -374,32 +450,83 @@
       </section>
 
       <section id="programs" class="section">
-        <div class="container placeholder-box">
+        <div class="container">
           <h2 class="title">프로그램 안내</h2>
-          <p class="desc">초중고 프로그램 구성은 다음 단계에서 세부 공개합니다.</p>
+          <p class="desc">초등에서 고등까지 학년 특성에 맞는 영어 역량을 단계별로 설계한 맞춤 커리큘럼입니다.</p>
+          <div class="programs-grid" aria-label="학년별 프로그램 안내">
+            <article class="card">
+              <h3>초등</h3>
+              <p class="desc">어휘 습득, 문장 이해, 기초 문법을 반복 루틴으로 다져 학습 자신감을 만듭니다.</p>
+            </article>
+            <article class="card">
+              <h3>중등</h3>
+              <p class="desc">독해 속도와 서술형 대응력을 동시에 강화해 내신·중간고사 연계 진도를 운영합니다.</p>
+            </article>
+            <article class="card">
+              <h3>고등</h3>
+              <p class="desc">모의고사 트렌드 분석과 출제 포인트 정리를 중심으로 고득점화 전략을 완성합니다.</p>
+            </article>
+          </div>
         </div>
       </section>
 
       <section id="location" class="section">
-        <div class="container placeholder-box">
-          <h2 class="title">위치/오시는 길</h2>
-          <p class="desc">위치 및 방문 안내 정보는 다음 단계에서 업데이트합니다.</p>
+        <div class="container">
+          <h2 class="title">오시는 길</h2>
+          <p class="desc">상담 전 방문을 원하시면 아래 정보를 확인해 주세요.</p>
+          <div class="contact-list" aria-label="학원 안내 정보">
+            <article class="contact-card">
+              <span class="contact-label">학원명</span>
+              <p class="contact-value">프라임 영어학원</p>
+            </article>
+            <article class="contact-card">
+              <span class="contact-label">주소</span>
+              <p class="contact-value">서울시 영등포구 미래로 00길 12, 3층</p>
+            </article>
+            <article class="contact-card">
+              <span class="contact-label">운영시간</span>
+              <p class="contact-value">평일 09:30~21:30 / 토요일 10:00~16:00</p>
+            </article>
+          </div>
         </div>
       </section>
 
       <section id="faq" class="section">
-        <div class="container placeholder-box">
+        <div class="container">
           <h2 class="title">자주 묻는 질문</h2>
-          <p class="desc">자주 묻는 질문은 다음 단계에서 정리해 제공합니다.</p>
+          <p class="desc">학부모님들이 가장 많이 궁금해하시는 질문 4가지를 미리 정리했습니다.</p>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>상담 진행</summary>
+              <p class="faq-answer">문자 접수 후 1~2일 내에 학습 수준을 확인할 수 있는 상담 시간을 제안드리며, 진단 질문지를 먼저 보내 맞춤 제안을 준비합니다.</p>
+            </details>
+            <details class="faq-item">
+              <summary>반편성 기준</summary>
+              <p class="faq-answer">진단 결과와 공부 습관을 바탕으로 현재 단계에 맞는 반을 배정하며, 학기별 목표와 학습 속도를 함께 조정합니다.</p>
+            </details>
+            <details class="faq-item">
+              <summary>보강/결석</summary>
+              <p class="faq-answer">결석 시 누락 수업은 복습 패키지와 보강 학습안으로 보완하며, 보강 횟수는 주기적 피드백 안에서 조정합니다.</p>
+            </details>
+            <details class="faq-item">
+              <summary>학부모 피드백</summary>
+              <p class="faq-answer">주간 리포트와 월간 간담회형 피드백으로 수업 진행, 과제 완성도, 성적 변화를 정량적으로 공유합니다.</p>
+            </details>
+          </div>
         </div>
       </section>
 
       <section id="cta-final" class="section">
-        <div class="container placeholder-box">
-          <h2 class="title">상담 문의</h2>
-          <p class="desc">카카오톡 오픈채팅으로 문의하면 상담 절차를 안내해드립니다.</p>
+        <div class="container">
+          <h2 class="title">마지막으로 상담을 시작해보세요</h2>
+          <p class="desc">아이의 현재 진도와 목표를 기준으로 1:1 학습 방향을 바로 제안해 드립니다.</p>
+          <div class="hero-actions section-cta">
+            <a class="btn btn-primary" href="https://open.kakao.com/o/demo-link" target="_blank" rel="noopener">카카오톡 오픈채팅 문의</a>
+          </div>
         </div>
       </section>
     </main>
+
+    <a class="floating-kakao btn btn-primary" href="https://open.kakao.com/o/demo-link" target="_blank" rel="noopener">카카오톡 오픈채팅 문의</a>
   </body>
 </html>
