@@ -1,538 +1,541 @@
-<!doctype html>
-<html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>프라임 영어학원 | 초중고 맞춤 영어관리</title>
-    <style>
-      :root {
-        --bg: #f6f8fc;
-        --surface: #ffffff;
-        --text: #111827;
-        --muted: #4b5563;
-        --line: #dbe3ef;
-        --primary: #1e40ff;
-        --primary-strong: #1732cc;
-        --max: 1080px;
-      }
+<!DOCTYPE html>
 
-      * {
-        box-sizing: border-box;
+<html class="scroll-smooth" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>프라임 영어학원 | 초중고 맞춤 영어관리</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#705e00",
+                    "inverse-primary": "#e9c400",
+                    "primary": "#705d00",
+                    "on-secondary-fixed-variant": "#474746",
+                    "on-tertiary-fixed": "#0d1d2a",
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#e5e2e1",
+                    "outline-variant": "#d0c6ab",
+                    "primary-fixed": "#ffe16d",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-surface": "#1c1b1b",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#ffd700",
+                    "on-background": "#1c1b1b",
+                    "on-tertiary-container": "#516170",
+                    "surface-variant": "#e5e2e1",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "secondary-container": "#e2dfde",
+                    "on-secondary-container": "#636262",
+                    "surface-container-low": "#f6f3f2",
+                    "surface": "#fcf9f8",
+                    "surface-container": "#f0eded",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#50606f",
+                    "surface-dim": "#dcd9d9",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#221b00",
+                    "secondary": "#5f5e5e",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#e5e2e1",
+                    "surface-container-high": "#eae7e7",
+                    "tertiary-container": "#cbdcee",
+                    "on-primary-fixed-variant": "#544600",
+                    "tertiary-fixed-dim": "#b8c8da",
+                    "on-surface-variant": "#4d4732",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed-variant": "#394857",
+                    "background": "#fcf9f8",
+                    "surface-bright": "#fcf9f8",
+                    "surface-tint": "#705d00",
+                    "inverse-surface": "#313030",
+                    "inverse-on-surface": "#f3f0ef",
+                    "primary-fixed-dim": "#e9c400",
+                    "outline": "#7e775f",
+                    "tertiary-fixed": "#d4e4f6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "1rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
       }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        font-family: "Pretendard", "Noto Sans KR", system-ui, -apple-system, sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.6;
-      }
-
-      .container {
-        width: min(100% - 2rem, var(--max));
-        margin: 0 auto;
-      }
-
-      .site-header {
-        position: sticky;
-        top: 0;
-        z-index: 30;
-        border-bottom: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.94);
-        backdrop-filter: blur(8px);
-      }
-
-      .site-header-inner {
-        min-height: 68px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        flex-wrap: wrap;
-        padding: 0.6rem 0;
-      }
-
-      .brand {
-        margin: 0;
-        font-size: 1rem;
-        font-weight: 800;
-      }
-
-      .nav {
-        display: flex;
-        gap: 0.7rem;
-        flex-wrap: wrap;
-      }
-
-      .nav a {
-        text-decoration: none;
-        color: var(--muted);
-        font-weight: 600;
-        font-size: 0.92rem;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 44px;
-        border-radius: 12px;
-        padding: 0.72rem 1.05rem;
-        text-decoration: none;
-        font-weight: 700;
-        border: 1px solid transparent;
-      }
-
-      .btn-primary {
-        background: var(--primary);
-        color: #fff;
-      }
-
-      .btn-primary:hover {
-        background: var(--primary-strong);
-      }
-
-      .btn-secondary {
-        background: var(--surface);
-        border-color: var(--line);
-        color: var(--text);
-      }
-
-      a:focus-visible,
-      button:focus-visible {
-        outline: 3px solid #7c9bff;
-        outline-offset: 2px;
-        border-radius: 12px;
-      }
-
-      main section[id] {
-        scroll-margin-top: 92px;
-      }
-
-      .section {
-        padding: 4rem 0;
-      }
-
-      .title {
-        margin: 0 0 0.5rem;
-        font-size: clamp(1.4rem, 2.1vw, 2rem);
-        line-height: 1.3;
-      }
-
-      .desc {
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .hero-eyebrow {
-        margin: 0 0 0.5rem;
-        color: var(--primary);
-        font-weight: 800;
-      }
-
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.7rem;
-        margin-top: 1.25rem;
-      }
-
-      .metric-grid,
-      .strength-grid,
-      .card-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 0.85rem;
-        margin-top: 1.25rem;
-      }
-
-      .review-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 0.85rem;
-        margin-top: 1.25rem;
-      }
-
-      blockquote.card {
-        margin: 0;
-        background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
-      }
-
-      blockquote.card p {
-        margin: 0;
-      }
-
-      .reviewer {
-        display: block;
-        margin-top: 0.55rem;
-        font-style: normal;
-        color: var(--muted);
-        font-weight: 700;
-        font-size: 0.92rem;
-      }
-
-      .system-flow {
-        margin-top: 1.25rem;
-        display: grid;
-        gap: 0.75rem;
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      }
-
-      .system-flow .flow-step {
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 1rem;
-        background: var(--surface);
-      }
-
-      .flow-title {
-        margin: 0 0 0.35rem;
-        font-size: 1rem;
-        font-weight: 700;
-      }
-
-      .flow-desc {
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .section-cta {
-        margin-top: 1.25rem;
-      }
-
-      .programs-grid,
-      .contact-list,
-      .faq-list {
-        margin-top: 1.25rem;
-      }
-
-      .programs-grid,
-      .contact-list,
-      .faq-list {
-        display: grid;
-        gap: 0.85rem;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      }
-
-      .contact-card {
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 1rem;
-        background: var(--surface);
-      }
-
-      .contact-label {
-        display: block;
-        color: var(--primary);
-        font-weight: 700;
-        margin-bottom: 0.24rem;
-      }
-
-      .contact-value {
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .faq-item {
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        background: var(--surface);
-        padding: 0.95rem 1rem;
-      }
-
-      .faq-item summary {
-        cursor: pointer;
-        font-weight: 700;
-        list-style: none;
-      }
-
-      .faq-item summary::-webkit-details-marker {
-        display: none;
-      }
-
-      .faq-item summary::after {
-        content: "+";
-        float: right;
-        font-size: 1.15rem;
-        transform: translateY(-1px);
-        color: var(--primary);
-      }
-
-      .faq-item[open] summary::after {
-        content: "−";
-      }
-
-      .faq-answer {
-        margin: 0.75rem 0 0;
-        color: var(--muted);
-      }
-
-      .floating-kakao {
-        position: fixed;
-        right: 1rem;
-        bottom: 1rem;
-        z-index: 40;
-        border-radius: 999px;
-        box-shadow: 0 8px 20px rgba(30, 64, 255, 0.25);
-      }
-
-      .card {
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 1rem;
-      }
-
-      .card h3 {
-        margin: 0 0 0.4rem;
-        font-size: 1.05rem;
-      }
-
-      @media (max-width: 880px) {
-        .site-header-inner {
-          justify-content: flex-start;
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-      }
+        .tonal-shift { background-color: #f6f3f2; }
+        .tonal-shift-top { border-top: 1px solid rgba(208, 198, 171, 0.15); }
     </style>
-  </head>
-  <body>
-    <!-- OPEN CHAT URL: 운영 시 아래 href의 demo-link 값을 실제 카카오 오픈채팅 URL로 동일하게 교체하세요. -->
-    <header class="site-header">
-      <div class="container site-header-inner">
-        <p class="brand">프라임 영어학원</p>
-        <nav class="nav" aria-label="주요 섹션 이동">
-          <a href="#hero">홈</a>
-          <a href="#strengths">강점</a>
-          <a href="#results">성적 사례</a>
-          <a href="#reviews">학부모 후기</a>
-          <a href="#system">관리 방식</a>
-          <a href="#programs">프로그램</a>
-          <a href="#location">위치</a>
-          <a href="#faq">자주 묻는 질문</a>
-        </nav>
-        <a class="btn btn-primary" href="https://open.kakao.com/o/demo-link" target="_blank" rel="noopener">카카오톡 문의</a>
-      </div>
-    </header>
-
-    <main>
-      <section id="hero" class="section">
-        <div class="container">
-          <p class="hero-eyebrow">초·중·고 맞춤 영어관리</p>
-          <h1 class="title">학부모가 안심하고 맡길 수 있는 영어학원</h1>
-          <p class="desc">
-            진단부터 피드백까지 한 흐름으로 관리하여 흔들림 없는 학습 습관을 만듭니다.
-            내신과 수능 성과를 데이터로 점검해 우리 아이의 변화를 분명하게 확인할 수 있습니다.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://open.kakao.com/o/demo-link" target="_blank" rel="noopener">카카오톡 오픈채팅 문의</a>
-            <a class="btn btn-secondary" href="#results">성적 사례 보기</a>
-          </div>
-          <div class="metric-grid" aria-label="핵심 지표">
-            <article class="card">
-              <h3>내신 A등급 비율</h3>
-              <p class="desc">최근 1년 기준 78%</p>
-            </article>
-            <article class="card">
-              <h3>학부모 만족도</h3>
-              <p class="desc">정기 설문 평균 4.8 / 5</p>
-            </article>
-            <article class="card">
-              <h3>학습 리포트 제공</h3>
-              <p class="desc">주 1회 진행 현황 공유</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="strengths" class="section">
-        <div class="container">
-          <h2 class="title">선택 이유가 분명한 3가지 강점</h2>
-          <p class="desc">성과, 관리, 커리큘럼을 하나의 체계로 제공합니다.</p>
-          <div class="strength-grid">
-            <article class="card">
-              <h3>성적 향상 실적</h3>
-              <p class="desc">내신과 모의고사 변화 데이터를 기반으로 목표 달성 과정을 추적합니다.</p>
-            </article>
-            <article class="card">
-              <h3>소수정예 맞춤관리</h3>
-              <p class="desc">학생별 강점과 약점을 반영한 과제·피드백으로 학습 효율을 높입니다.</p>
-            </article>
-            <article class="card">
-              <h3>초중고 연계 커리큘럼</h3>
-              <p class="desc">학년 전환 시기에도 끊김 없는 학습 로드맵으로 안정적으로 실력을 확장합니다.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="results" class="section">
-        <div class="container">
-          <h2 class="title">성적 향상 사례</h2>
-          <p class="desc">실제 시험 성적 변화 흐름을 핵심 수치로 정리해 아이의 현재 위치와 목표를 함께 보여드립니다.</p>
-          <div class="card-grid" aria-label="성적 향상 사례 카드">
-            <article class="card">
-              <h3>중2 내신</h3>
-              <p class="desc">기초 영단어 습관과 문장독해 루틴을 다시 잡은 뒤, 1개월 내 내신 영어 점수 <strong>70점대 → 82점</strong>으로 상승했습니다.</p>
-            </article>
-            <article class="card">
-              <h3>고1 모의고사</h3>
-              <p class="desc">단원별 오답 패턴 점검을 통해 오답 복기 루틴을 강화해 <strong>모의고사 2회차</strong>에서 1등급 구간 진입했습니다.</p>
-            </article>
-            <article class="card">
-              <h3>초6 기초독해</h3>
-              <p class="desc">문장 구조 이해와 독해 스크립트 훈련으로 10회 수업 안에 <strong>문항 정답률이 34% 향상</strong>했습니다.</p>
-            </article>
-          </div>
-          <div class="hero-actions section-cta">
-            <a class="btn btn-primary" href="https://open.kakao.com/o/demo-link" target="_blank" rel="noopener">우리 아이 케이스 상담받기</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="reviews" class="section">
-        <div class="container">
-          <h2 class="title">학부모 후기</h2>
-          <p class="desc">매달 꾸준히 변화가 쌓이면서 공부 태도와 성적 모두가 개선되는 점을 많이 들었습니다.</p>
-          <div class="review-grid" aria-label="학부모 후기">
-            <blockquote class="card">
-              <p>영어를 시작부터 자신 있게 못하던 아이가 2달 뒤엔 수업 전에 복습 계획표를 직접 만들기 시작했습니다. 매일 학원 가는 날이 달라졌어요.</p>
-              <cite class="reviewer">박○○님 · 2학년 학부모</cite>
-            </blockquote>
-            <blockquote class="card">
-              <p>선생님이 피드백을 구체적으로 내려줘서 어디가 약한지 정확히 알고 집에서 바로 관리할 수 있었습니다. 학교 시험 점수도 같이 올라가고 있습니다.</p>
-              <cite class="reviewer">이○○님 · 고1 학부모</cite>
-            </blockquote>
-            <blockquote class="card">
-              <p>기본 실력이 흔들리던 초6 자녀가 매주 진도 체크를 받으면서 오독·오답 실수를 많이 줄였고, 수업 집중도가 확실히 달라졌습니다.</p>
-              <cite class="reviewer">최○○님 · 초6 학부모</cite>
-            </blockquote>
-          </div>
-        </div>
-      </section>
-
-      <section id="system" class="section">
-        <div class="container">
-          <h2 class="title">관리 방식</h2>
-          <p class="desc">진단부터 피드백까지 학생 상태에 맞춰 운영되는 5단계 흐름으로 관리합니다.</p>
-          <div class="system-flow" aria-label="학습 관리 5단계">
-            <article class="flow-step">
-              <p class="flow-title">1) 진단</p>
-              <p class="flow-desc">실력 체크와 오답 패턴 분석으로 현재 상태를 정확히 파악합니다.</p>
-            </article>
-            <article class="flow-step">
-              <p class="flow-title">2) 학습설계</p>
-              <p class="flow-desc">단계별 목표를 반영한 주간 플랜과 과제 체계를 설계합니다.</p>
-            </article>
-            <article class="flow-step">
-              <p class="flow-title">3) 수업</p>
-              <p class="flow-desc">개별 성향에 맞춘 설명, 연습, 즉시 정정 지도로 수업합니다.</p>
-            </article>
-            <article class="flow-step">
-              <p class="flow-title">4) 점검</p>
-              <p class="flow-desc">주간 성취도를 기록해 학습 정체 구간을 빠르게 교정합니다.</p>
-            </article>
-            <article class="flow-step">
-              <p class="flow-title">5) 피드백</p>
-              <p class="flow-desc">학습 리포트와 다음 주 액션 아이템으로 다음 수업을 연결합니다.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="programs" class="section">
-        <div class="container">
-          <h2 class="title">프로그램 안내</h2>
-          <p class="desc">초등에서 고등까지 학년 특성에 맞는 영어 역량을 단계별로 설계한 맞춤 커리큘럼입니다.</p>
-          <div class="programs-grid" aria-label="학년별 프로그램 안내">
-            <article class="card">
-              <h3>초등</h3>
-              <p class="desc">어휘 습득, 문장 이해, 기초 문법을 반복 루틴으로 다져 학습 자신감을 만듭니다.</p>
-            </article>
-            <article class="card">
-              <h3>중등</h3>
-              <p class="desc">독해 속도와 서술형 대응력을 동시에 강화해 내신·중간고사 연계 진도를 운영합니다.</p>
-            </article>
-            <article class="card">
-              <h3>고등</h3>
-              <p class="desc">모의고사 트렌드 분석과 출제 포인트 정리를 중심으로 고득점화 전략을 완성합니다.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="location" class="section">
-        <div class="container">
-          <h2 class="title">오시는 길</h2>
-          <p class="desc">상담 전 방문을 원하시면 아래 정보를 확인해 주세요.</p>
-          <div class="contact-list" aria-label="학원 안내 정보">
-            <article class="contact-card">
-              <span class="contact-label">학원명</span>
-              <p class="contact-value">프라임 영어학원</p>
-            </article>
-            <article class="contact-card">
-              <span class="contact-label">주소</span>
-              <p class="contact-value">서울시 영등포구 미래로 00길 12, 3층</p>
-            </article>
-            <article class="contact-card">
-              <span class="contact-label">운영시간</span>
-              <p class="contact-value">평일 09:30~21:30 / 토요일 10:00~16:00</p>
-            </article>
-            <article class="contact-card">
-              <span class="contact-label">전화번호</span>
-              <p class="contact-value">02-000-0000</p>
-            </article>
-            <article class="contact-card">
-              <span class="contact-label">교통 안내</span>
-              <p class="contact-value">영등포구청역 도보 5분, 양평동 버스정류장 도보 2분</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="faq" class="section">
-        <div class="container">
-          <h2 class="title">자주 묻는 질문</h2>
-          <p class="desc">학부모님들이 가장 많이 궁금해하시는 질문 4가지를 미리 정리했습니다.</p>
-          <div class="faq-list">
-            <details class="faq-item">
-              <summary>상담 진행</summary>
-              <p class="faq-answer">문자 접수 후 1~2일 내에 학습 수준을 확인할 수 있는 상담 시간을 제안드리며, 진단 질문지를 먼저 보내 맞춤 제안을 준비합니다.</p>
-            </details>
-            <details class="faq-item">
-              <summary>반편성 기준</summary>
-              <p class="faq-answer">진단 결과와 공부 습관을 바탕으로 현재 단계에 맞는 반을 배정하며, 학기별 목표와 학습 속도를 함께 조정합니다.</p>
-            </details>
-            <details class="faq-item">
-              <summary>보강/결석</summary>
-              <p class="faq-answer">결석 시 누락 수업은 복습 패키지와 보강 학습안으로 보완하며, 보강 횟수는 주기적 피드백 안에서 조정합니다.</p>
-            </details>
-            <details class="faq-item">
-              <summary>학부모 피드백</summary>
-              <p class="faq-answer">주간 리포트와 월간 간담회형 피드백으로 수업 진행, 과제 완성도, 성적 변화를 정량적으로 공유합니다.</p>
-            </details>
-            <details class="faq-item">
-              <summary>과제관리</summary>
-              <p class="faq-answer">과제 난이도와 제출 주기를 학생별로 조정해 누적 부담을 줄이고, 미제출 항목은 보강 시간에 개별 보완합니다.</p>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <section id="cta-final" class="section">
-        <div class="container">
-          <h2 class="title">마지막으로 상담을 시작해보세요</h2>
-          <p class="desc">아이의 현재 진도와 목표를 기준으로 1:1 학습 방향을 바로 제안해 드립니다.</p>
-          <div class="hero-actions section-cta">
-            <a class="btn btn-primary" href="https://open.kakao.com/o/demo-link" target="_blank" rel="noopener">카카오톡 오픈채팅 문의</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <a class="floating-kakao btn btn-primary" href="https://open.kakao.com/o/demo-link" target="_blank" rel="noopener">카카오톡 오픈채팅 문의</a>
-  </body>
-</html>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased">
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 w-full bg-[#fcf9f8]/80 backdrop-blur-xl shadow-[0_32px_64px_-15px_rgba(28,27,27,0.06)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-6">
+<span class="text-2xl font-black tracking-tighter text-[#1c1b1b] font-headline">프라임 영어학원</span>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-[#1c1b1b] font-bold border-b-2 border-[#ffd700] pb-1 font-headline tracking-tight transition-colors duration-300" href="#programs">프로그램</a>
+<a class="text-[#5f5e5e] font-medium hover:text-[#ffd700] font-headline tracking-tight transition-colors duration-300" href="#methodology">관리 방식</a>
+<a class="text-[#5f5e5e] font-medium hover:text-[#ffd700] font-headline tracking-tight transition-colors duration-300" href="#success">성공 사례</a>
+<a class="text-[#5f5e5e] font-medium hover:text-[#ffd700] font-headline tracking-tight transition-colors duration-300" href="#location">오시는 길</a>
+<a class="text-[#5f5e5e] font-medium hover:text-[#ffd700] font-headline tracking-tight transition-colors duration-300" href="#faq">자주 묻는 질문</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-3 rounded-xl font-bold font-headline transition-transform active:scale-95 duration-200 ease-in-out">
+                <a href="https://open.kakao.com/o/demo-link" target="_blank" rel="noopener">Consult Now</a>
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative overflow-hidden pt-16 pb-24 md:pt-24 md:pb-32 bg-surface">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="z-10">
+<span class="inline-block px-4 py-1.5 rounded-full bg-primary-container/20 text-primary font-bold text-sm mb-6 uppercase tracking-wider">Prime English Academy</span>
+<h1 class="text-5xl md:text-7xl font-extrabold font-headline text-on-surface leading-[1.1] mb-8 tracking-tighter">
+                    학부모가 안심하고 맡길 수 있는 <span class="text-primary">영어관리</span>
+</h1>
+<p class="text-xl text-secondary mb-10 max-w-lg leading-relaxed">
+                    프라임 잉글리쉬 아카데미는 단순한 지식 전달을 넘어, 아이의 학습 습관과 성적을 동시에 책임지는 초밀착 프리미엄 케어를 제공합니다.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 mb-16">
+<button class="bg-primary-container text-on-primary-container px-8 py-5 rounded-xl font-extrabold text-lg flex items-center justify-center gap-2 shadow-lg shadow-primary-container/20 hover:scale-[1.02] transition-transform">
+<span class="material-symbols-outlined">chat</span>
+                        <a href="https://open.kakao.com/o/demo-link" target="_blank" rel="noopener">카카오톡 오픈채팅 문의</a>
+                    </button>
+<div class="flex items-center gap-4 px-6 py-4 rounded-xl bg-surface-container-low">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-surface bg-gray-200 overflow-hidden"><img class="w-full h-full object-cover" data-alt="portrait of a professional female teacher smiling in a classroom setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbQamzBUJSOf7HKOcbEfiLBElI3UVy0hmT6Cuk6gZIUHcrqerd8uxdADN9zmllFh_aGCjGXbBvmFKZsreRYJPULiJsDkXOIq32MewYbUhqfP952i6iS6fN41kEhuzDFkjeaO04C07SlGGPszWWhfxVxGJAcJhitS515ce6A3Li0l7XE24mT6ugT24BeiZpBjeFspd-o4_MdcJZQzS8zA2XsRLF_7MKzskAYnIgCn_Bsln61xScr94yLUAQwwNRM6CDPgEbZw7WR9I"/></div>
+<div class="w-10 h-10 rounded-full border-2 border-surface bg-gray-200 overflow-hidden"><img class="w-full h-full object-cover" data-alt="middle-aged male academic professional with a kind expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9bdciOvBaa0iBH-aI39uONmdV0Y935onXZZuJo30J8vFOwenuMHCmiLrKOXCryEgZKHXm0gRD8z24fdBMsSbhTJtyunGiHr0h5-BVQ87Bcf4gsdA7A5ntgvtVoTxvsiuaEm3FoIajvBTXY2KrKrcKH1iHcdaJH9XmJCxE1RnNBTTVTG2XcLtEsItYS1RUcQTSTUe3qUnz6AElgMh4Ptx53yt1wpqnphz0X71xZ6_WbouQPJO8q7rhgoMbRnuECOtT2eRjRz3009w"/></div>
+<div class="w-10 h-10 rounded-full border-2 border-surface bg-gray-200 overflow-hidden flex items-center justify-center bg-primary text-white text-xs font-bold">+12</div>
+</div>
+<div>
+<p class="text-sm font-bold">전문 강사진 상담</p>
+<p class="text-xs text-secondary">실시간 답변 가능</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8 border-t border-outline-variant/30 pt-8">
+<div>
+<p class="text-4xl font-black font-headline text-on-surface">78%</p>
+<p class="text-sm text-secondary font-medium">A-grade 성취율</p>
+</div>
+<div>
+<p class="text-4xl font-black font-headline text-on-surface">4.8/5</p>
+<p class="text-sm text-secondary font-medium">학부모 만족도</p>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-12 -left-12 w-64 h-64 bg-primary-container rounded-full blur-[100px] opacity-20"></div>
+<div class="relative rounded-3xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+<img class="w-full h-auto object-cover aspect-[4/5]" data-alt="group of students collaborating on a project in a modern sunlit classroom with premium furniture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdYn6MZJVnnks58WaYT2yqWwVdICgfWZ3Qy2kz7KaYw1Y-5uxyU6Cwv8t36EAG6AGQRI0JyweB5uQz-Bx96vVSBjSWmdDmQtpXIq0RPOMvbwqpdEaegmZ8VyFtRKC0g1IaACofdBdHETIDfIg8j9c0flNKH47RJ9vZv-izQCuFOqnB_cMS-pAd-CCqQITVhW9aDs2C-jlgjP7IMvjM413I2B8hhKCDnLofgqKqdTeHDlW1xaf-WHkow-afej3MNlpV3HLdZzcRHfg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+<p class="text-white font-medium italic">"LUMINARY에서는 아이의 잠재력이 현실이 됩니다."</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Strengths Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl md:text-5xl font-black font-headline mb-4 tracking-tight text-on-surface">루미너리만의 차별화된 강점</h2>
+<div class="w-20 h-1.5 bg-primary-container mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-lowest p-10 rounded-xl hover:shadow-xl transition-all duration-300 group">
+<div class="w-16 h-16 bg-primary-container/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-4xl text-primary" data-weight="fill">trending_up</span>
+</div>
+<h3 class="text-2xl font-bold font-headline mb-4">성적 향상 실적</h3>
+<p class="text-secondary leading-relaxed">단기 성적 향상을 넘어선 근본적인 독해력과 논리 정립으로 내신부터 수능까지 완벽하게 대비합니다.</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-xl hover:shadow-xl transition-all duration-300 group">
+<div class="w-16 h-16 bg-primary-container/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-4xl text-primary" data-weight="fill">groups</span>
+</div>
+<h3 class="text-2xl font-bold font-headline mb-4">소수정예 맞춤관리</h3>
+<p class="text-secondary leading-relaxed">한 반 최대 6명, 학생 한 명 한 명의 학습 속도와 약점을 정확히 파악하여 개별 맞춤 솔루션을 제공합니다.</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-xl hover:shadow-xl transition-all duration-300 group">
+<div class="w-16 h-16 bg-primary-container/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-4xl text-primary" data-weight="fill">account_tree</span>
+</div>
+<h3 class="text-2xl font-bold font-headline mb-4">초중고 연계 커리큘럼</h3>
+<p class="text-secondary leading-relaxed">끊김 없는 학습 로드맵을 통해 초등 기초부터 고등 심화까지 체계적으로 연결되는 교육을 실현합니다.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 성공 사례 -->
+<section class="py-24 bg-surface" id="success">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-2xl">
+<h2 class="text-4xl md:text-5xl font-black font-headline mb-6 tracking-tight">수치로 증명하는 <span class="text-primary">성공 신화</span></h2>
+<p class="text-secondary text-lg">우리 아이들의 땀방울이 만들어낸 실제 성적 변화입니다.</p>
+</div>
+<button class="text-on-surface font-bold flex items-center gap-2 hover:underline underline-offset-8">
+                    더 많은 사례 보기 <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Case 1 -->
+<div class="bg-surface-container rounded-xl overflow-hidden">
+<div class="h-48 bg-gray-200 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="focused high school student writing in a notebook in a modern library with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_LgejvNuFuhtCtmTZJKRlQ_tHdhin5J6XqLlukP1joOU05GQkIBK3028dTpRkkAKlscnOB7CNZnCzioBPcvG-_J1gop_6w9EQ_K8t_urBhc1hNfLGyPRqJ_YemVT8KmkJ5xb_WzFwlHgpPBkoo-oy58631BtiKCpHPiOrbXI_rSD6dOfISBrloMekcl2VM3qeCYmh82JOJVF_JcNGSt93vvPWNs9S1YBJ3ppMG73NcE9MWfsbL842O5ghx4YlYqkxsYGFNsHCqoY"/>
+<div class="absolute top-4 right-4 bg-primary-container text-on-primary-container font-bold px-3 py-1 rounded-full text-xs">내신 집중</div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-2 mb-4">
+<span class="text-xs font-bold text-primary px-2 py-0.5 border border-primary rounded">신목중 3학년</span>
+<span class="text-xs font-bold text-secondary">김*현 학생</span>
+</div>
+<h4 class="text-xl font-bold mb-4">중간고사 영어 62점 → 기말고사 98점</h4>
+<p class="text-secondary text-sm mb-6">서술형 문항 집중 공략과 일일 어휘 테스트를 통해 단 2개월 만에 최상위권으로 도약했습니다.</p>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/20">
+<span class="text-xs text-secondary">#문법마스터 #서술형만점</span>
+<span class="font-black text-primary">+36 points</span>
+</div>
+</div>
+</div>
+<!-- Case 2 -->
+<div class="bg-surface-container rounded-xl overflow-hidden">
+<div class="h-48 bg-gray-200 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="smiling teenage students discussing group study notes in a collaborative workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0c7wnPTVB_Yv7pPSwen180fQhXclRhQwNo_tYJq2OSFhD9ukTOjWAfxia2-jldalx-_KjveeDJ7be_dl2l0NcxleLGKQFoCRZ4irrJqKU-PSd3VLKocmuQU4IBnMB49NPx6_XIoqogsx-Y6-PcTNsREQpkIDfO1o6eAiy8fmAaw6_7XDsvtSuPynGxQooqU3-RwOcvVltLp_8pc1Xmtoec7x8nczfzUW-x5DR3LlP40NBQnDKbK7di0JljHB6lE49lSLleDeoeAQ"/>
+<div class="absolute top-4 right-4 bg-primary-container text-on-primary-container font-bold px-3 py-1 rounded-full text-xs">수능 대비</div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-2 mb-4">
+<span class="text-xs font-bold text-primary px-2 py-0.5 border border-primary rounded">목동고 2학년</span>
+<span class="text-xs font-bold text-secondary">이*우 학생</span>
+</div>
+<h4 class="text-xl font-bold mb-4">모의고사 4등급 → 1등급 안정권</h4>
+<p class="text-secondary text-sm mb-6">빈칸 추론 및 순서 배열 오답 원인 정밀 분석을 통해 수능 1등급 킬러 문항을 정복했습니다.</p>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/20">
+<span class="text-xs text-secondary">#독해논리 #수능1등급</span>
+<span class="font-black text-primary">Top Tier</span>
+</div>
+</div>
+</div>
+<!-- Case 3 -->
+<div class="bg-surface-container rounded-xl overflow-hidden">
+<div class="h-48 bg-gray-200 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="academic mentor guiding a student through complex educational materials in a well-lit office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl0iQimTMUmx991YL9KnUIs4sJmxQCAJutoNUsSdD65J7m473Cnw-92ju7wdcMVr6irqVOYai8qpI36RHFjXZkPDbmBe2uUVHRnMP8Jag5Naio4ESzgUgGXdSEm7i4bbdsSyIzGURUzwRucwvRKMFyxFrAzITc_1vbHlEQt3F_-jogKRLdJaCSMuCQy674qb4A1kyaCq_hhmSqmfh9XxlxDj7cNflyTw9GUoCBr2wn2MD2vD7Q1_SnHzcIsTP4rMpYsuXDO91vdO0"/>
+<div class="absolute top-4 right-4 bg-primary-container text-on-primary-container font-bold px-3 py-1 rounded-full text-xs">수행 평가</div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-2 mb-4">
+<span class="text-xs font-bold text-primary px-2 py-0.5 border border-primary rounded">양정중 2학년</span>
+<span class="text-xs font-bold text-secondary">최*민 학생</span>
+</div>
+<h4 class="text-xl font-bold mb-4">수행평가 올만점 &amp; 교내 말하기 대회 금상</h4>
+<p class="text-secondary text-sm mb-6">스피칭 첨삭과 에세이 라이팅 집중 훈련으로 학교 생활 기록부의 경쟁력을 극대화했습니다.</p>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/20">
+<span class="text-xs text-secondary">#에세이전문 #수행평가만점</span>
+<span class="font-black text-primary">Awarded</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews -->
+<section class="py-24 bg-surface-container-low overflow-hidden">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="text-center text-4xl font-black font-headline mb-20 tracking-tight">학부모님들의 <span class="text-primary">진심 어린 후기</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 relative">
+<div class="absolute -top-10 left-10 text-[12rem] font-serif text-primary/10 select-none">“</div>
+<div class="relative bg-surface-container-lowest p-12 rounded-3xl shadow-sm italic text-lg leading-relaxed text-secondary border-l-8 border-primary-container">
+                    "영어를 정말 싫어하던 아이가 이제는 스스로 단어장을 들고 다녀요. 성적도 성적이지만, 공부하는 법을 가르쳐주신 원장님께 정말 감사드립니다."
+                    <div class="mt-8 not-italic flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high"></div>
+<div>
+<p class="font-bold text-on-surface">김지영 학부모님</p>
+<p class="text-sm text-secondary">중등부 정규반</p>
+</div>
+</div>
+</div>
+<div class="relative bg-surface-container-lowest p-12 rounded-3xl shadow-sm italic text-lg leading-relaxed text-secondary border-l-8 border-primary-container">
+                    "다른 대형 학원에서는 케어받지 못한다는 느낌이 강했는데, 루미너리는 선생님이 아이의 부족한 부분을 정확히 꿰뚫고 계셔서 믿고 맡깁니다."
+                    <div class="mt-8 not-italic flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high"></div>
+<div>
+<p class="font-bold text-on-surface">박수민 학부모님</p>
+<p class="text-sm text-secondary">고등부 내신반</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- System Section -->
+<section class="py-24 bg-surface" id="methodology">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-20">
+<h2 class="text-4xl md:text-5xl font-black font-headline mb-4 tracking-tight">빈틈없는 5단계 <span class="text-primary">관리 시스템</span></h2>
+<p class="text-secondary max-w-2xl mx-auto">체계적인 진단부터 피드백까지, 결과가 나올 수밖에 없는 프라임의 프로세스입니다.</p>
+</div>
+<div class="relative">
+<div class="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-outline-variant/30 -translate-y-1/2"></div>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-center text-center group">
+<div class="w-20 h-20 rounded-full bg-surface border-4 border-primary-container flex items-center justify-center text-2xl font-black mb-6 group-hover:scale-110 transition-transform">01</div>
+<h4 class="text-xl font-bold mb-3">Diagnosis</h4>
+<p class="text-sm text-secondary leading-relaxed">학습 이력 및 레벨 테스트를 통한 정밀 분석</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center text-center group">
+<div class="w-20 h-20 rounded-full bg-surface border-4 border-primary-container flex items-center justify-center text-2xl font-black mb-6 group-hover:scale-110 transition-transform">02</div>
+<h4 class="text-xl font-bold mb-3">Design</h4>
+<p class="text-sm text-secondary leading-relaxed">학생 맞춤형 1:1 로드맵 및 교재 설계</p>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col items-center text-center group">
+<div class="w-20 h-20 rounded-full bg-primary-container flex items-center justify-center text-2xl font-black mb-6 group-hover:scale-110 transition-transform">03</div>
+<h4 class="text-xl font-bold mb-3">Class</h4>
+<p class="text-sm text-secondary leading-relaxed">몰입도 높은 소수정예 밀착 오프라인 수업</p>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 flex flex-col items-center text-center group">
+<div class="w-20 h-20 rounded-full bg-surface border-4 border-primary-container flex items-center justify-center text-2xl font-black mb-6 group-hover:scale-110 transition-transform">04</div>
+<h4 class="text-xl font-bold mb-3">Check</h4>
+<p class="text-sm text-secondary leading-relaxed">Daily/Weekly 누적 테스트 및 미달 시 재시험</p>
+</div>
+<!-- Step 5 -->
+<div class="relative z-10 flex flex-col items-center text-center group">
+<div class="w-20 h-20 rounded-full bg-surface border-4 border-primary-container flex items-center justify-center text-2xl font-black mb-6 group-hover:scale-110 transition-transform">05</div>
+<h4 class="text-xl font-bold mb-3">Feedback</h4>
+<p class="text-sm text-secondary leading-relaxed">학부모 정기 리포트 및 학습 심리 상담</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 프로그램 Section -->
+<section class="py-24 bg-surface-container-low" id="programs">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="text-4xl md:text-5xl font-black font-headline mb-16 tracking-tight text-center">연령별 전문 <span class="text-primary">교육 프로그램</span></h2>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+<!-- Elem -->
+<div class="bg-surface-container-lowest rounded-3xl p-10 flex flex-col border border-transparent hover:border-primary-container transition-all">
+<div class="mb-8">
+<span class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-container/10 px-3 py-1 rounded">Level 01</span>
+<h3 class="text-3xl font-black font-headline mt-4">Elementary</h3>
+<p class="text-secondary mt-2">영어 흥미와 기본 문법 체계 정립</p>
+</div>
+<ul class="space-y-4 mb-12 flex-grow">
+<li class="flex items-center gap-3 text-secondary">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            파닉스 완성과 필수 어휘 1,000개
+                        </li>
+<li class="flex items-center gap-3 text-secondary">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            스피킹 중심의 상황별 회화 훈련
+                        </li>
+<li class="flex items-center gap-3 text-secondary">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            초등 필수 문법 기초 다지기
+                        </li>
+</ul>
+<button class="w-full py-4 rounded-xl border-2 border-primary-container text-on-surface font-bold hover:bg-primary-container transition-colors">프로그램 상세 보기</button>
+</div>
+<!-- Middle -->
+<div class="bg-surface-container-lowest rounded-3xl p-10 flex flex-col border-4 border-primary-container relative transform lg:scale-105 shadow-2xl z-20">
+<div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-primary-container text-on-primary-container px-6 py-1.5 rounded-full text-sm font-black uppercase tracking-widest">Most Popular</div>
+<div class="mb-8">
+<span class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-container/10 px-3 py-1 rounded">Level 02</span>
+<h3 class="text-3xl font-black font-headline mt-4">Middle School</h3>
+<p class="text-secondary mt-2">내신 만점과 고등 선행 학습</p>
+</div>
+<ul class="space-y-4 mb-12 flex-grow">
+<li class="flex items-center gap-3 text-secondary">
+<span class="material-symbols-outlined text-primary text-xl" data-weight="fill">check_circle</span>
+                            학교별 내신 기출 변형 완벽 분석
+                        </li>
+<li class="flex items-center gap-3 text-secondary">
+<span class="material-symbols-outlined text-primary text-xl" data-weight="fill">check_circle</span>
+                            중등 핵심 문법 총정리 및 영작
+                        </li>
+<li class="flex items-center gap-3 text-secondary">
+<span class="material-symbols-outlined text-primary text-xl" data-weight="fill">check_circle</span>
+                            고1 수준의 독해 선행 및 유형 분석
+                        </li>
+</ul>
+<button class="w-full py-4 rounded-xl bg-primary-container text-on-primary-container font-black shadow-lg shadow-primary-container/30 hover:brightness-105 transition-all">실시간 등록 문의</button>
+</div>
+<!-- High -->
+<div class="bg-surface-container-lowest rounded-3xl p-10 flex flex-col border border-transparent hover:border-primary-container transition-all">
+<div class="mb-8">
+<span class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-container/10 px-3 py-1 rounded">Level 03</span>
+<h3 class="text-3xl font-black font-headline mt-4">High School</h3>
+<p class="text-secondary mt-2">수능 1등급 및 최상위권 내신</p>
+</div>
+<ul class="space-y-4 mb-12 flex-grow">
+<li class="flex items-center gap-3 text-secondary">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            모의고사 고난도 킬러 문항 집중 훈련
+                        </li>
+<li class="flex items-center gap-3 text-secondary">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            외부 지문 완벽 커버 및 서술형 대비
+                        </li>
+<li class="flex items-center gap-3 text-secondary">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            입시 전형별 개인별 학습 전략 수립
+                        </li>
+</ul>
+<button class="w-full py-4 rounded-xl border-2 border-primary-container text-on-surface font-bold hover:bg-primary-container transition-colors">프로그램 상세 보기</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Location Section -->
+<section class="py-24 bg-surface" id="location">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<div>
+<h2 class="text-4xl font-black font-headline mb-8 tracking-tight">찾아오시는 길</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">location_on</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">학원 주소</h4>
+<p class="text-secondary">서울특별시 양천구 목동서로 1234 루미너리 빌딩 5층</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">schedule</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">운영 시간</h4>
+<p class="text-secondary">평일 13:00 - 22:00 | 토요일 10:00 - 18:00</p>
+<p class="text-xs text-primary mt-1">* 일요일 및 공휴일 휴무</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">call</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">상담 전화</h4>
+<p class="text-secondary">02-123-4567</p>
+</div>
+</div>
+</div>
+</div>
+<div class="h-[400px] bg-surface-container rounded-3xl overflow-hidden relative shadow-inner">
+<img class="w-full h-full object-cover grayscale opacity-50" data-alt="stylized architectural map with soft shadows showing urban district layouts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5VUuWc6BYFmcnwoOmQHgo7s5nhLbO9gzXQT3kl9tBYYqUx1pTsP4jLcvTY9ydE1zGX7wopNz9y8Zh5mvWWwCRSUsAMwgBi9np-dCOuEvvbFuNDLHTH91hP8_ZlosDLfufxSJtXeHNO0ePjiABsyoogxbiyDZIq-N1EBEhTVcqjXtmBwwwHxWeAX_0vq7E0DXFGMxASaJVVWSkpy59me07Fw9jvfPZiyp-FKjZtYi323oeIkNTwytJ8Nip8DtH82JiDA7s8nLyACk"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-primary-container text-on-primary-container p-6 rounded-2xl shadow-xl flex items-center gap-4 animate-bounce">
+<span class="material-symbols-outlined text-3xl">school</span>
+<span class="font-black">프라임 영어학원</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 자주 묻는 질문 Section -->
+<section class="py-24 bg-surface-container-low" id="faq">
+<div class="max-w-3xl mx-auto px-8">
+<h2 class="text-4xl font-black font-headline mb-12 tracking-tight text-center">자주 묻는 질문</h2>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm">
+<button class="w-full flex justify-between items-center text-left">
+<span class="font-bold text-lg">레벨 테스트 비용이 있나요?</span>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm">
+<button class="w-full flex justify-between items-center text-left">
+<span class="font-bold text-lg">한 반 정원은 정확히 몇 명인가요?</span>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm border-2 border-primary-container">
+<button class="w-full flex justify-between items-center text-left mb-4">
+<span class="font-bold text-lg">성적이 낮은 아이도 수강 가능한가요?</span>
+<span class="material-symbols-outlined text-primary">expand_less</span>
+</button>
+<p class="text-secondary leading-relaxed pl-1">
+                        네, 가능합니다. 루미너리는 현재의 성적보다 '배우고자 하는 의지'를 더 중요하게 생각합니다. 기초가 부족한 학생을 위한 '베이직 집중반'이 운영되고 있으며, 1:1 보충 수업을 통해 빠르게 정규반 수준으로 끌어올려 드립니다.
+                    </p>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm">
+<button class="w-full flex justify-between items-center text-left">
+<span class="font-bold text-lg">셔틀버스를 운영하나요?</span>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="bg-[#1c1b1b] rounded-[3rem] p-16 md:p-24 text-center relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent"></div>
+<div class="relative z-10">
+<h2 class="text-4xl md:text-6xl font-black font-headline text-white mb-8 tracking-tight">
+                        아이의 영어가 고민이라면<br/>지금 바로 <span class="text-primary-container">무료 상담</span>을 받아보세요
+                    </h2>
+<p class="text-white/60 text-xl mb-12 max-w-2xl mx-auto">
+                        방문 상담 시 현재 아이의 학습 상태를 꼼꼼하게 분석해 드리는 '1:1 진단 레포트'를 무료로 제공합니다.
+                    </p>
+<button class="bg-primary-container text-on-primary-container px-12 py-6 rounded-2xl font-black text-2xl flex items-center justify-center gap-4 mx-auto hover:scale-105 transition-transform shadow-2xl shadow-primary-container/20">
+<span class="material-symbols-outlined text-3xl">chat</span>
+                        <a href="https://open.kakao.com/o/demo-link" target="_blank" rel="noopener">카카오톡으로 시작하기</a>
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#f6f3f2] py-16 tonal-shift-top">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div>
+<span class="text-xl font-bold text-[#1c1b1b] font-headline">프라임 영어학원</span>
+<p class="mt-4 text-[#5f5e5e] font-['Inter'] text-sm leading-relaxed">
+                    프라임 잉글리쉬 아카데미 (LUMINARY) | 원장: 홍길동 | 사업자등록번호: 123-45-67890<br/>
+                    학원 등록번호: 제 1234호 | 통신판매업 신고번호: 2024-서울양천-0000
+                </p>
+<p class="mt-8 text-[#5f5e5e] font-['Inter'] text-sm">© 2024 Scholarly Luminary English Academy. All Rights Reserved.</p>
+</div>
+<div class="flex flex-wrap md:justify-end gap-x-8 gap-y-4">
+<a class="text-[#5f5e5e] font-medium hover:underline decoration-[#ffd700] underline-offset-4 transition-opacity opacity-80 hover:opacity-100 font-['Inter'] text-sm" href="#">Privacy Policy</a>
+<a class="text-[#5f5e5e] font-medium hover:underline decoration-[#ffd700] underline-offset-4 transition-opacity opacity-80 hover:opacity-100 font-['Inter'] text-sm" href="#">Terms of Service</a>
+<a class="text-[#5f5e5e] font-medium hover:underline decoration-[#ffd700] underline-offset-4 transition-opacity opacity-80 hover:opacity-100 font-['Inter'] text-sm" href="#">Instructor Recruitment</a>
+<a class="text-[#5f5e5e] font-medium hover:underline decoration-[#ffd700] underline-offset-4 transition-opacity opacity-80 hover:opacity-100 font-['Inter'] text-sm" href="#">Campus Map</a>
+</div>
+</div>
+</footer>
+<!-- Floating Action Button -->
+<div class="fixed bottom-10 right-10 z-[60]">
+<button class="w-16 h-16 bg-[#FEE500] rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform group relative">
+<span class="material-symbols-outlined text-black text-3xl">chat</span>
+<span class="absolute -top-12 right-0 bg-white px-4 py-2 rounded-xl text-sm font-bold shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap"><a href="https://open.kakao.com/o/demo-link" target="_blank" rel="noopener">실시간 문의하기</a></span>
+</button>
+</div>
+</body></html>
