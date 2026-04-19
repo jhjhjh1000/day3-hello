@@ -56,8 +56,10 @@
       }
 
       .nav {
-        display: none;
+        display: flex;
         gap: 0.75rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
       }
 
       .nav a {
@@ -85,6 +87,12 @@
       }
 
       .cta-primary:hover { background: var(--primary-strong); }
+
+      .nav a:focus-visible,
+      .cta:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 2px;
+      }
 
       .section {
         padding: 4.5rem 0;
